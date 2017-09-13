@@ -61,6 +61,72 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-服务发现和服务注册" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/13/服务发现和服务注册/" class="article-date">
+  <time datetime="2017-09-13T07:00:00.000Z" itemprop="datePublished">2017-09-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/微服务/">微服务</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/13/服务发现和服务注册/">服务发现和服务注册</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="服务发现和服务注册"><a href="#服务发现和服务注册" class="headerlink" title="服务发现和服务注册"></a>服务发现和服务注册</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>服务注册：服务实例启动时注册到服务注册表中。</li>
+<li>服务发现：当服务注册表中注册新的服务实例时能够通知其他的服务，让其他服务知道新的服务已经启动了。</li>
+</ul>
+<h2 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h2><p>包括下面两种服务发现：</p>
+<ul>
+<li>客户端服务发现：客户端向服务注册表发送一个请求查询注册列表，然后客户端使用一个负载均衡算法去选择一个服务实例进行访问。<br><img src="/2017/09/13/服务发现和服务注册/服务发现和服务注册14937897909861.jpg" alt=""></li>
+</ul>
+<ul>
+<li>服务端服务发现：客户端通过负载均衡器向一个服务发送请求，负载均衡器查询服务注册表，并将请求路由到可用的服务实例上。<br><img src="/2017/09/13/服务发现和服务注册/服务发现和服务注册14937896750584.jpg" alt=""></li>
+</ul>
+<h2 id="服务注册"><a href="#服务注册" class="headerlink" title="服务注册"></a>服务注册</h2><p>包括两种服务注册方式：</p>
+<ul>
+<li><p>服务自注册：服务实例启动时注册到服务注册表中，一段时间后服务实例发送心跳请求防止注册过期，当出现注册过期时从服务注册表中注销服务实例.<br><img src="/2017/09/13/服务发现和服务注册/服务发现和服务注册14937902435257.jpg" alt=""></p>
+</li>
+<li><p>第三方注册：服务实例不会自己在服务注册表中注册，由另一个系统组件service registrar负责,service registrar通过轮询部署环境或订阅事件去跟踪运行中的实例的变化。当它注意到一个新的可用的服务实例时，就会到注册表中去注册。service registrar也会将停止的服务实例注销。开源项目如：Registrator<br><img src="/2017/09/13/服务发现和服务注册/服务发现和服务注册14937903494412.jpg" alt=""></p>
+</li>
+</ul>
+<p>##参考</p>
+<ul>
+<li><a href="http://blog.csdn.net/xn_sung/article/details/52336732" target="_blank" rel="external">客户端服务发现</a></li>
+<li><a href="http://www.primeton.com/read.php?id=2269&amp;his=1" target="_blank" rel="external">服务端服务发现</a></li>
+<li><a href="http://www.cfanz.cn/index.php?c=article&amp;a=read&amp;id=306176" target="_blank" rel="external">服务发现与服务注册</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/13/服务发现和服务注册/" data-id="cj7is3k5y0006uymcu9a3ubze" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务发现/">服务发现</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务注册/">服务注册</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-java-阻塞|非阻塞编程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/13/java-阻塞|非阻塞编程/" class="article-date">
@@ -110,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/13/java-阻塞|非阻塞编程/" data-id="cj7ipmp9r0001l8mcgmgshnjj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/13/java-阻塞|非阻塞编程/" data-id="cj7is3k530000uymcru978qyk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阻塞/">阻塞</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/非阻塞/">非阻塞</a></li></ul>
@@ -196,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/13/ssh隧道进行端口转发/" data-id="cj7ipmp9z0002l8mc6dajm9v3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/13/ssh隧道进行端口转发/" data-id="cj7is3k5j0004uymcndtaxdm2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Putty/">Putty</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSH/">SSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tunnel/">Tunnel</a></li></ul>
@@ -240,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/26/我的第一个页面/" data-id="cj7ipmpaf0005l8mc6xwgxv8n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/26/我的第一个页面/" data-id="cj7is3k5w0005uymcohqhk6iy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/example/">example</a></li></ul>
@@ -287,7 +353,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/26/hello-world/" data-id="cj7ipmp9l0000l8mc9g9rnl73" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/26/hello-world/" data-id="cj7is3k590001uymc8okz16zd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -306,7 +372,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-异步编程/">Java 异步编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux-SSH/">Linux SSH</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/example/">example</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-异步编程/">Java 异步编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux-SSH/">Linux SSH</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/example/">example</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微服务/">微服务</a></li></ul>
     </div>
   </div>
 
@@ -316,7 +382,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Putty/">Putty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tunnel/">Tunnel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/example/">example</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阻塞/">阻塞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非阻塞/">非阻塞</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Putty/">Putty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tunnel/">Tunnel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/example/">example</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务发现/">服务发现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务注册/">服务注册</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阻塞/">阻塞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非阻塞/">非阻塞</a></li></ul>
     </div>
   </div>
 
@@ -326,7 +392,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Putty/" style="font-size: 10px;">Putty</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Tunnel/" style="font-size: 10px;">Tunnel</a> <a href="/tags/example/" style="font-size: 10px;">example</a> <a href="/tags/阻塞/" style="font-size: 10px;">阻塞</a> <a href="/tags/非阻塞/" style="font-size: 10px;">非阻塞</a>
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Putty/" style="font-size: 10px;">Putty</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Tunnel/" style="font-size: 10px;">Tunnel</a> <a href="/tags/example/" style="font-size: 10px;">example</a> <a href="/tags/服务发现/" style="font-size: 10px;">服务发现</a> <a href="/tags/服务注册/" style="font-size: 10px;">服务注册</a> <a href="/tags/阻塞/" style="font-size: 10px;">阻塞</a> <a href="/tags/非阻塞/" style="font-size: 10px;">非阻塞</a>
     </div>
   </div>
 
@@ -346,6 +412,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/09/13/服务发现和服务注册/">服务发现和服务注册</a>
+          </li>
         
           <li>
             <a href="/2017/09/13/java-阻塞|非阻塞编程/">Java异步编程的理解</a>
