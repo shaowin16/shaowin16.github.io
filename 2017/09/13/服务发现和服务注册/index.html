@@ -11,15 +11,15 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/13/服务发现和服务注册/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="最近微服务在互联网行业可谓是如火如荼，下面是本人对服务发现和服务注册的一些理解。">
-<meta property="og:image" content="http://yoursite.com/2017/09/13/服务发现和服务注册/服务发现和服务注册14937897909861.jpg">
-<meta property="og:image" content="http://yoursite.com/2017/09/13/服务发现和服务注册/服务发现和服务注册14937896750584.jpg">
-<meta property="og:image" content="http://yoursite.com/2017/09/13/服务发现和服务注册/服务发现和服务注册14937902435257.jpg">
-<meta property="og:image" content="http://yoursite.com/2017/09/13/服务发现和服务注册/服务发现和服务注册14937903494412.jpg">
-<meta property="og:updated_time" content="2017-09-13T08:42:36.000Z">
+<meta property="og:image" content="http://yoursite.com/2017/09/13/服务发现和服务注册/14937897909861.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/09/13/服务发现和服务注册/14937896750584.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/09/13/服务发现和服务注册/14937902435257.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/09/13/服务发现和服务注册/14937903494412.jpg">
+<meta property="og:updated_time" content="2017-09-13T08:45:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务发现和服务注册">
 <meta name="twitter:description" content="最近微服务在互联网行业可谓是如火如荼，下面是本人对服务发现和服务注册的一些理解。">
-<meta name="twitter:image" content="http://yoursite.com/2017/09/13/服务发现和服务注册/服务发现和服务注册14937897909861.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2017/09/13/服务发现和服务注册/14937897909861.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -100,16 +100,16 @@
 </ul>
 <h2 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h2><p>包括下面两种服务发现：</p>
 <ul>
-<li>客户端服务发现：客户端向服务注册表发送一个请求查询注册列表，然后客户端使用一个负载均衡算法去选择一个服务实例进行访问。<br><img src="/2017/09/13/服务发现和服务注册/服务发现和服务注册14937897909861.jpg" alt=""></li>
+<li>客户端服务发现：客户端向服务注册表发送一个请求查询注册列表，然后客户端使用一个负载均衡算法去选择一个服务实例进行访问。<br><img src="/2017/09/13/服务发现和服务注册/14937897909861.jpg" alt=""></li>
 </ul>
 <ul>
-<li>服务端服务发现：客户端通过负载均衡器向一个服务发送请求，负载均衡器查询服务注册表，并将请求路由到可用的服务实例上。<br><img src="/2017/09/13/服务发现和服务注册/服务发现和服务注册14937896750584.jpg" alt=""></li>
+<li>服务端服务发现：客户端通过负载均衡器向一个服务发送请求，负载均衡器查询服务注册表，并将请求路由到可用的服务实例上。<br><img src="/2017/09/13/服务发现和服务注册/14937896750584.jpg" alt=""></li>
 </ul>
 <h2 id="服务注册"><a href="#服务注册" class="headerlink" title="服务注册"></a>服务注册</h2><p>包括两种服务注册方式：</p>
 <ul>
-<li><p>服务自注册：服务实例启动时注册到服务注册表中，一段时间后服务实例发送心跳请求防止注册过期，当出现注册过期时从服务注册表中注销服务实例.<br><img src="/2017/09/13/服务发现和服务注册/服务发现和服务注册14937902435257.jpg" alt=""></p>
+<li><p>服务自注册：服务实例启动时注册到服务注册表中，一段时间后服务实例发送心跳请求防止注册过期，当出现注册过期时从服务注册表中注销服务实例.<br><img src="/2017/09/13/服务发现和服务注册/14937902435257.jpg" alt=""></p>
 </li>
-<li><p>第三方注册：服务实例不会自己在服务注册表中注册，由另一个系统组件service registrar负责,service registrar通过轮询部署环境或订阅事件去跟踪运行中的实例的变化。当它注意到一个新的可用的服务实例时，就会到注册表中去注册。service registrar也会将停止的服务实例注销。开源项目如：Registrator<br><img src="/2017/09/13/服务发现和服务注册/服务发现和服务注册14937903494412.jpg" alt=""></p>
+<li><p>第三方注册：服务实例不会自己在服务注册表中注册，由另一个系统组件service registrar负责,service registrar通过轮询部署环境或订阅事件去跟踪运行中的实例的变化。当它注意到一个新的可用的服务实例时，就会到注册表中去注册。service registrar也会将停止的服务实例注销。开源项目如：Registrator<br><img src="/2017/09/13/服务发现和服务注册/14937903494412.jpg" alt=""></p>
 </li>
 </ul>
 <p>##参考</p>
@@ -122,7 +122,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/13/服务发现和服务注册/" data-id="cj7is4hix0006vamcexw0xlx8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/13/服务发现和服务注册/" data-id="cj7is6wy40006vtmccfs3brit" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务发现/">服务发现</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务注册/">服务注册</a></li></ul>
@@ -134,9 +134,9 @@
 <nav id="article-nav">
   
   
-    <a href="/2017/09/13/java-阻塞|非阻塞编程/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/09/13/ssh隧道进行端口转发/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Java异步编程的理解</div>
+      <div class="article-nav-title">SSH隧道进行端口转发</div>
     </a>
   
 </nav>
@@ -198,11 +198,11 @@
           </li>
         
           <li>
-            <a href="/2017/09/13/java-阻塞|非阻塞编程/">Java异步编程的理解</a>
+            <a href="/2017/09/13/ssh隧道进行端口转发/">SSH隧道进行端口转发</a>
           </li>
         
           <li>
-            <a href="/2017/09/13/ssh隧道进行端口转发/">SSH隧道进行端口转发</a>
+            <a href="/2017/09/13/java-阻塞|非阻塞编程/">Java异步编程的理解</a>
           </li>
         
           <li>
