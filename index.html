@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,67 +60,6 @@
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-java-阻塞|非阻塞编程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/13/java-阻塞|非阻塞编程/" class="article-date">
-  <time datetime="2017-09-13T02:00:00.000Z" itemprop="datePublished">2017-09-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java-异步编程/">Java 异步编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/13/java-阻塞|非阻塞编程/">阻塞I/O，非阻塞I/O，I/O多路复用，信号驱动I/O，异步I/O的区别</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="阻塞I-O，非阻塞I-O，I-O多路复用，信号驱动I-O，异步I-O的区别"><a href="#阻塞I-O，非阻塞I-O，I-O多路复用，信号驱动I-O，异步I-O的区别" class="headerlink" title="阻塞I/O，非阻塞I/O，I/O多路复用，信号驱动I/O，异步I/O的区别"></a>阻塞I/O，非阻塞I/O，I/O多路复用，信号驱动I/O，异步I/O的区别</h2><h4 id="I-O操作的两个阶段"><a href="#I-O操作的两个阶段" class="headerlink" title="I/O操作的两个阶段"></a>I/O操作的两个阶段</h4><p>I/O操作分为两个阶段：</p>
-<ol>
-<li>等待数据</li>
-<li>将数据从内核拷贝到用户空间</li>
-</ol>
-<h3 id="I-O-模型"><a href="#I-O-模型" class="headerlink" title="I/O 模型"></a>I/O 模型</h3><p>一般来说 I/O 模型可以分为：同步阻塞，同步非阻塞，异步阻塞，异步非阻塞 四种IO模型</p>
-<p>阻塞：体现在这个线程不能干别的了，只能在这里等着（是对于I/O整个阶段都是阻塞来说的）<br>同步：是体现在消息通知机制上的，即stream有没有数据是需要我自己来判断的（需要自己检查）。</p>
-<p><img src="java-阻塞|非阻塞编程//15052781467407.jpg" alt=""></p>
-<h4 id="阻塞I-O"><a href="#阻塞I-O" class="headerlink" title="阻塞I/O"></a>阻塞I/O</h4><p>阻塞I/O：传统的JAVA I/O,需要等待响应完成后才进行后面的操作——同步阻塞</p>
-<p><img src="java-阻塞|非阻塞编程//15052781624036.jpg" alt=""></p>
-<h4 id="非阻塞I-O"><a href="#非阻塞I-O" class="headerlink" title="非阻塞I/O"></a>非阻塞I/O</h4><p> 非阻塞I/O：通过进程间断check的形式查看数据是否已经完成数据传送回来，此时第一个阶段不需要阻塞，只需要第二个阶段阻塞，目前java的nio就是这个类型——同步非阻塞。</p>
-<p> <img src="java-阻塞|非阻塞编程//15052781755154.jpg" alt=""></p>
-<h4 id="I-O复用"><a href="#I-O复用" class="headerlink" title="I/O复用"></a>I/O复用</h4><p>I/O复用：与第二种不一样的地方是，采用select()和poll()等系统调用可以同时处理多个线程的I/O，查看是否数据到来了——同步非阻塞。</p>
-<p><img src="java-阻塞|非阻塞编程//15052781893701.jpg" alt=""></p>
-<h4 id="信号驱动I-O"><a href="#信号驱动I-O" class="headerlink" title="信号驱动I/O"></a>信号驱动I/O</h4><p>信号驱动I/O：与I/O复用不同的是，不调用select()和poll()，而是当有写事件发生时，内核向进程发送一个信号，相比select()和poll()性能提高了——异步非阻塞。</p>
-<h4 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h4><p>异步I/O：用户进程发起I/O后，就去做其他事情，当所有数据返回完毕并拷贝到用户空间后内核才发起通知——异步非阻塞。</p>
-<p><img src="java-阻塞|非阻塞编程//15052782099284.jpg" alt=""></p>
-<h4 id="从前"><a href="#从前" class="headerlink" title="从前"></a>从前</h4><p>有A，B，C，D四个人在钓鱼：<br>A用的是最老式的鱼竿，所以呢，得一直守着，等到鱼上钩了再拉杆；<br>B的鱼竿有个功能，能够显示是否有鱼上钩，所以呢，B就和旁边的MM聊天，隔会再看看有没有鱼上钩，有的话就迅速拉杆；<br>C用的鱼竿和B差不多，但他想了一个好办法，就是同时放好几根鱼竿，然后守在旁边，一旦有显示说鱼上钩了，它就将对应的鱼竿拉起来；<br>D是个有钱人，干脆雇了一个人帮他钓鱼，一旦那个人把鱼钓上来了，就给D发个短信。</p>
-<p>参考<br><a href="http://blog.csdn.net/delphiwcdj/article/details/52279114" target="_blank" rel="external">http://blog.csdn.net/delphiwcdj/article/details/52279114</a><br><a href="https://github.com/jasonGeng88/blog/blob/master/201708/java-nio.md" target="_blank" rel="external">https://github.com/jasonGeng88/blog/blob/master/201708/java-nio.md</a><br><a href="http://blog.csdn.net/historyasamirror/article/details/5778378" target="_blank" rel="external">http://blog.csdn.net/historyasamirror/article/details/5778378</a><br><a href="http://www.cnblogs.com/Anker/p/3254269.html" target="_blank" rel="external">http://www.cnblogs.com/Anker/p/3254269.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/13/java-阻塞|非阻塞编程/" data-id="cj7ikn9le0001hsmcqlheaxdk" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阻塞/">阻塞</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/非阻塞/">非阻塞</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-ssh隧道进行端口转发" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -196,10 +135,71 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/13/ssh隧道进行端口转发/" data-id="cj7ikn9ll0002hsmcx11br8nt" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/09/13/ssh隧道进行端口转发/" data-id="cj7ikr51v0002ijmconraz2nj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Putty/">Putty</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSH/">SSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tunnel/">Tunnel</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java-阻塞|非阻塞编程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/13/java-阻塞|非阻塞编程/" class="article-date">
+  <time datetime="2017-09-13T02:00:00.000Z" itemprop="datePublished">2017-09-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-异步编程/">Java 异步编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/13/java-阻塞|非阻塞编程/">Java异步编程的理解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="阻塞I-O，非阻塞I-O，I-O多路复用，信号驱动I-O，异步I-O的区别"><a href="#阻塞I-O，非阻塞I-O，I-O多路复用，信号驱动I-O，异步I-O的区别" class="headerlink" title="阻塞I/O，非阻塞I/O，I/O多路复用，信号驱动I/O，异步I/O的区别"></a>阻塞I/O，非阻塞I/O，I/O多路复用，信号驱动I/O，异步I/O的区别</h2><h4 id="I-O操作的两个阶段"><a href="#I-O操作的两个阶段" class="headerlink" title="I/O操作的两个阶段"></a>I/O操作的两个阶段</h4><p>I/O操作分为两个阶段：</p>
+<ol>
+<li>等待数据</li>
+<li>将数据从内核拷贝到用户空间</li>
+</ol>
+<h3 id="I-O-模型"><a href="#I-O-模型" class="headerlink" title="I/O 模型"></a>I/O 模型</h3><p>一般来说 I/O 模型可以分为：同步阻塞，同步非阻塞，异步阻塞，异步非阻塞 四种IO模型</p>
+<p>阻塞：体现在这个线程不能干别的了，只能在这里等着（是对于I/O整个阶段都是阻塞来说的）<br>同步：是体现在消息通知机制上的，即stream有没有数据是需要我自己来判断的（需要自己检查）。</p>
+<p><img src="java-阻塞|非阻塞编程//15052781467407.jpg" alt=""></p>
+<h4 id="阻塞I-O"><a href="#阻塞I-O" class="headerlink" title="阻塞I/O"></a>阻塞I/O</h4><p>阻塞I/O：传统的JAVA I/O,需要等待响应完成后才进行后面的操作——同步阻塞</p>
+<p><img src="java-阻塞|非阻塞编程//15052781624036.jpg" alt=""></p>
+<h4 id="非阻塞I-O"><a href="#非阻塞I-O" class="headerlink" title="非阻塞I/O"></a>非阻塞I/O</h4><p> 非阻塞I/O：通过进程间断check的形式查看数据是否已经完成数据传送回来，此时第一个阶段不需要阻塞，只需要第二个阶段阻塞，目前java的nio就是这个类型——同步非阻塞。</p>
+<p> <img src="java-阻塞|非阻塞编程//15052781755154.jpg" alt=""></p>
+<h4 id="I-O复用"><a href="#I-O复用" class="headerlink" title="I/O复用"></a>I/O复用</h4><p>I/O复用：与第二种不一样的地方是，采用select()和poll()等系统调用可以同时处理多个线程的I/O，查看是否数据到来了——同步非阻塞。</p>
+<p><img src="java-阻塞|非阻塞编程//15052781893701.jpg" alt=""></p>
+<h4 id="信号驱动I-O"><a href="#信号驱动I-O" class="headerlink" title="信号驱动I/O"></a>信号驱动I/O</h4><p>信号驱动I/O：与I/O复用不同的是，不调用select()和poll()，而是当有写事件发生时，内核向进程发送一个信号，相比select()和poll()性能提高了——异步非阻塞。</p>
+<h4 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h4><p>异步I/O：用户进程发起I/O后，就去做其他事情，当所有数据返回完毕并拷贝到用户空间后内核才发起通知——异步非阻塞。</p>
+<p><img src="java-阻塞|非阻塞编程//15052782099284.jpg" alt=""></p>
+<h4 id="从前"><a href="#从前" class="headerlink" title="从前"></a>从前</h4><p>有A，B，C，D四个人在钓鱼：<br>A用的是最老式的鱼竿，所以呢，得一直守着，等到鱼上钩了再拉杆；<br>B的鱼竿有个功能，能够显示是否有鱼上钩，所以呢，B就和旁边的MM聊天，隔会再看看有没有鱼上钩，有的话就迅速拉杆；<br>C用的鱼竿和B差不多，但他想了一个好办法，就是同时放好几根鱼竿，然后守在旁边，一旦有显示说鱼上钩了，它就将对应的鱼竿拉起来；<br>D是个有钱人，干脆雇了一个人帮他钓鱼，一旦那个人把鱼钓上来了，就给D发个短信。</p>
+<p>参考<br><a href="http://blog.csdn.net/delphiwcdj/article/details/52279114" target="_blank" rel="external">http://blog.csdn.net/delphiwcdj/article/details/52279114</a><br><a href="https://github.com/jasonGeng88/blog/blob/master/201708/java-nio.md" target="_blank" rel="external">https://github.com/jasonGeng88/blog/blob/master/201708/java-nio.md</a><br><a href="http://blog.csdn.net/historyasamirror/article/details/5778378" target="_blank" rel="external">http://blog.csdn.net/historyasamirror/article/details/5778378</a><br><a href="http://www.cnblogs.com/Anker/p/3254269.html" target="_blank" rel="external">http://www.cnblogs.com/Anker/p/3254269.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/13/java-阻塞|非阻塞编程/" data-id="cj7ikr5260005ijmcmaiydm99" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阻塞/">阻塞</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/非阻塞/">非阻塞</a></li></ul>
 
     </footer>
   </div>
@@ -240,7 +240,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/26/我的第一个页面/" data-id="cj7ikn9ly0005hsmczu5h5vd0" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/02/26/我的第一个页面/" data-id="cj7ikr51p0001ijmcrab9x4cv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/example/">example</a></li></ul>
@@ -287,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/26/hello-world/" data-id="cj7ikn9l80000hsmclofjuiye" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/02/26/hello-world/" data-id="cj7ikr51j0000ijmcaiufqyb3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -304,7 +304,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-异步编程/">Java 异步编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux-SSH/">Linux SSH</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/example/">example</a></li></ul>
     </div>
@@ -314,7 +314,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Putty/">Putty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tunnel/">Tunnel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/example/">example</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阻塞/">阻塞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非阻塞/">非阻塞</a></li></ul>
     </div>
@@ -324,7 +324,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Putty/" style="font-size: 10px;">Putty</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Tunnel/" style="font-size: 10px;">Tunnel</a> <a href="/tags/example/" style="font-size: 10px;">example</a> <a href="/tags/阻塞/" style="font-size: 10px;">阻塞</a> <a href="/tags/非阻塞/" style="font-size: 10px;">非阻塞</a>
     </div>
@@ -343,16 +343,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/09/13/java-阻塞|非阻塞编程/">阻塞I/O，非阻塞I/O，I/O多路复用，信号驱动I/O，异步I/O的区别</a>
+            <a href="/2017/09/13/ssh隧道进行端口转发/">SSH隧道进行端口转发</a>
           </li>
         
           <li>
-            <a href="/2017/09/13/ssh隧道进行端口转发/">SSH隧道进行端口转发</a>
+            <a href="/2017/09/13/java-阻塞|非阻塞编程/">Java异步编程的理解</a>
           </li>
         
           <li>
@@ -376,7 +376,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
