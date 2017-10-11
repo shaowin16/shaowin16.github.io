@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -87,7 +87,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="collectd和collectd-web的安装与配置"><a href="#collectd和collectd-web的安装与配置" class="headerlink" title="collectd和collectd-web的安装与配置"></a>collectd和collectd-web的安装与配置</h1><h2 id="collectd的安装"><a href="#collectd的安装" class="headerlink" title="collectd的安装"></a>collectd的安装</h2><ul>
+        <h2 id="collectd的安装"><a href="#collectd的安装" class="headerlink" title="collectd的安装"></a>collectd的安装</h2><ul>
 <li><p>centos7下的安装</p>
 <p>  <strong>使用yum启用epel软件库和安装collectd</strong></p>
   <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ yum install epel-release</div><div class="line">$ yum install collectd.x86_64 collectd-apache collectd-ping collectd-nut collectd-snmp collectd-mysql collectd-rrdtool(经过测试直接安装collectd,启动后没有生成rrd文件,这样安装可以)</div></pre></td></tr></table></figure>
@@ -135,14 +135,23 @@
 <pre><code>方法二：
 
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$  python runserver.py &amp;</div></pre></td></tr></table></figure>
-</code></pre><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><pre><code>- [http://network.51cto.com/art/201505/475518.htm###](http://network.51cto.com/art/201505/475518.htm###)
+</code></pre><p>  界面：</p>
+<ul>
+<li>cpu<br><img src="/2017/10/11/collectd和collectd-web的安装与配置/15076996593713.jpg" alt=""></li>
+<li><p>负载<br><img src="/2017/10/11/collectd和collectd-web的安装与配置/15076996965189.jpg" alt=""></p>
+</li>
+<li><p>内存<br><img src="/2017/10/11/collectd和collectd-web的安装与配置/15076997124367.jpg" alt=""></p>
+</li>
+</ul>
+<p>监控其他更多的指标，可以修改配置文件，支持的插件列表：<br><a href="https://collectd.org/wiki/index.php/Table_of_Plugins" target="_blank" rel="external">https://collectd.org/wiki/index.php/Table_of_Plugins</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><pre><code>- [http://network.51cto.com/art/201505/475518.htm###](http://network.51cto.com/art/201505/475518.htm###)
 - [https://collectd.org/wiki/index.php/First_steps](https://collectd.org/wiki/index.php/First_steps)
 - [http://www.drupal001.com/2012/07/system-monitor-collectd/](http://www.drupal001.com/2012/07/system-monitor-collectd/)
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/11/collectd和collectd-web的安装与配置/" data-id="cj8ml70yt0000lhmcqida23ar" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/10/11/collectd和collectd-web的安装与配置/" data-id="cj8mlmdun0000otmcma88w9hw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -178,7 +187,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="服务发现和服务注册"><a href="#服务发现和服务注册" class="headerlink" title="服务发现和服务注册"></a>服务发现和服务注册</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+        <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
 <li>服务注册：服务实例启动时注册到服务注册表中。</li>
 <li>服务发现：当服务注册表中注册新的服务实例时能够通知其他的服务，让其他服务知道新的服务已经启动了。</li>
 </ul>
@@ -205,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/13/服务发现和服务注册/" data-id="cj8ml70zq0008lhmcfyhmaj5i" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/09/13/服务发现和服务注册/" data-id="cj8mlmdvk0008otmca7wydprj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务发现/">服务发现</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务注册/">服务注册</a></li></ul>
@@ -266,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/13/java-阻塞|非阻塞编程/" data-id="cj8ml70zj0005lhmcbv86qby0" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/09/13/java-阻塞|非阻塞编程/" data-id="cj8mlmdvc0004otmcg8k2sp1i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阻塞/">阻塞</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/非阻塞/">非阻塞</a></li></ul>
@@ -352,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/13/ssh隧道进行端口转发/" data-id="cj8ml70zo0006lhmcnzylfbrv" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/09/13/ssh隧道进行端口转发/" data-id="cj8mlmdvi0006otmckm46jh3u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Putty/">Putty</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSH/">SSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tunnel/">Tunnel</a></li></ul>
@@ -399,7 +408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/26/hello-world/" data-id="cj8ml70z80003lhmc6smxlu4u" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/02/26/hello-world/" data-id="cj8mlmdus0001otmcwyh9zdmu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -487,7 +496,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/13/docker 常用命令/" data-id="cj8ml70yz0001lhmcamgtiwi3" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/07/13/docker 常用命令/" data-id="cj8mlmdv10003otmckul14p9w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker-command/">docker-command</a></li></ul>
@@ -506,7 +515,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-异步编程/">Java 异步编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux-SSH/">Linux SSH</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker-command/">docker command</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微服务/">微服务</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/监控告警-collectd-collectd-web/">监控告警 collectd collectd-web</a></li></ul>
     </div>
@@ -516,7 +525,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Putty/">Putty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tunnel/">Tunnel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-command/">docker-command</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务发现/">服务发现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务注册/">服务注册</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阻塞/">阻塞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非阻塞/">非阻塞</a></li></ul>
     </div>
@@ -526,7 +535,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Putty/" style="font-size: 10px;">Putty</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Tunnel/" style="font-size: 10px;">Tunnel</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-command/" style="font-size: 10px;">docker-command</a> <a href="/tags/服务发现/" style="font-size: 10px;">服务发现</a> <a href="/tags/服务注册/" style="font-size: 10px;">服务注册</a> <a href="/tags/阻塞/" style="font-size: 10px;">阻塞</a> <a href="/tags/非阻塞/" style="font-size: 10px;">非阻塞</a>
     </div>
@@ -545,7 +554,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -582,7 +591,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
